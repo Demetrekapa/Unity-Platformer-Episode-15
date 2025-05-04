@@ -10,6 +10,9 @@ public class LevelChanger : MonoBehaviour
     [Header("Pause")]
     [SerializeField] private GameObject pauseScreen;
 
+
+
+   
     private void Awake()
     {
         gameOverScreen.SetActive(false);
@@ -27,9 +30,23 @@ public class LevelChanger : MonoBehaviour
 
     public void LoadLevel1()
     {
-        Debug.Log("Pressed");
         UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Level2");
+        }
+
+    }
+
+
+    //public void LoadLevel2()
+    //{
+    //}
+    
 
 
     #region Game Over
