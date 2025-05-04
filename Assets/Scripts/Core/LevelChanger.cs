@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UIManager : MonoBehaviour
+public class LevelChanger : MonoBehaviour
 {
-    [Header ("Game Over")]
+    [Header("Game Over")]
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private AudioClip gameOverSound;
 
@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         gameOverScreen.SetActive(false);
-        pauseScreen.SetActive(false);
+        pauseScreen.SetActive(true);
     }
     private void Update()
     {
@@ -24,7 +24,13 @@ public class UIManager : MonoBehaviour
         }
     }
 
-   
+
+    public void LoadLevel1()
+    {
+        Debug.Log("Pressed");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
+    }
+
 
     #region Game Over
     //Activate game over screen
@@ -80,3 +86,4 @@ public class UIManager : MonoBehaviour
     }
     #endregion
 }
+
