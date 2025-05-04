@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelChanger : MonoBehaviour
+public class Finish : MonoBehaviour
 {
     [Header("Game Over")]
     [SerializeField] private GameObject gameOverScreen;
@@ -12,7 +12,7 @@ public class LevelChanger : MonoBehaviour
 
 
 
-   
+
     private void Awake()
     {
         gameOverScreen.SetActive(false);
@@ -37,8 +37,8 @@ public class LevelChanger : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Level2");
-           
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Won");
+
         }
 
     }
@@ -47,7 +47,7 @@ public class LevelChanger : MonoBehaviour
     //public void LoadLevel2()
     //{
     //}
-    
+
 
 
     #region Game Over
